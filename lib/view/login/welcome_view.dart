@@ -38,7 +38,7 @@ SizedBox(
                 height: media.width * 0.1,
               ),
               Text(
-                "Welcome, Stefani",
+                "Welcome, Sanjal",
                 style: TextStyle(
                     color: TColor.black,
                     fontSize: 20,

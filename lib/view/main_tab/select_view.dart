@@ -1,17 +1,16 @@
+// select_view.dart
+import 'package:flutter/material.dart';
 import 'package:fitness/common_widget/round_button.dart';
 import 'package:fitness/view/meal_planner/meal_planner_view.dart';
 import 'package:fitness/view/workout_tracker/workout_tracker_view.dart';
-import 'package:flutter/material.dart';
-
 import '../sleep_tracker/sleep_tracker_view.dart';
+import '../pcos_test/pcos_test_view.dart'; // Import the PCOSTestView class
 
 class SelectView extends StatelessWidget {
-  const SelectView({super.key});
+  const SelectView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // var media = MediaQuery.of(context).size;
-
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -19,41 +18,53 @@ class SelectView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             RoundButton(
-                title: "Workout Tracker",
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const WorkoutTrackerView(),
-                    ),
-                  );
-                }),
-
-                const SizedBox(height: 15,),
-
-                  RoundButton(
-                title: "Meal Planner",
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const MealPlannerView(),
-                    ),
-                  );
-                }),
-
-                const SizedBox(height: 15,),
-
-                  RoundButton(
-                title: "Sleep Tracker",
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const SleepTrackerView(),
-                    ),
-                  );
-                })
+              title: "Workout Tracker",
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const WorkoutTrackerView(),
+                  ),
+                );
+              },
+            ),
+            const SizedBox(height: 15),
+            RoundButton(
+              title: "Meal Planner",
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MealPlannerView(),
+                  ),
+                );
+              },
+            ),
+            const SizedBox(height: 15),
+            RoundButton(
+              title: "Sleep Tracker",
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SleepTrackerView(),
+                  ),
+                );
+              },
+            ),
+            const SizedBox(height: 15),
+            // Add the "PCOS Test" section
+            RoundButton(
+              title: "PCOS Test",
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const PCOSTestView(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),

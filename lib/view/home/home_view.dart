@@ -131,7 +131,7 @@ class _HomeViewState extends State<HomeView> {
                           style: TextStyle(color: TColor.gray, fontSize: 12),
                         ),
                         Text(
-                          "Stefani Wong",
+                          "Sanjal Ghate",
                           style: TextStyle(
                               color: TColor.black,
                               fontSize: 20,
@@ -257,7 +257,7 @@ class _HomeViewState extends State<HomeView> {
                         child: RoundButton(
                           title: "Check",
                           type: RoundButtonType.bgGradient,
-                          fontSize: 12,
+                          fontSize: 10,
                           fontWeight: FontWeight.w400,
                           onPressed: () {
                             Navigator.push(

@@ -6,14 +6,17 @@ import '../../common_widget/round_button.dart';
 import '../../common_widget/round_textfield.dart';
 
 class CompleteProfileView extends StatefulWidget {
-  const CompleteProfileView({super.key});
+  const CompleteProfileView({Key? key}) : super(key: key);
 
   @override
   State<CompleteProfileView> createState() => _CompleteProfileViewState();
 }
 
 class _CompleteProfileViewState extends State<CompleteProfileView> {
-  TextEditingController txtDate = TextEditingController();
+  TextEditingController txtGender = TextEditingController();
+  TextEditingController txtDateOfBirth = TextEditingController();
+  TextEditingController txtWeight = TextEditingController();
+  TextEditingController txtHeight = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -52,62 +55,12 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                   padding: const EdgeInsets.symmetric(horizontal: 15.0),
                   child: Column(
                     children: [
-                      Container(
-                          decoration: BoxDecoration(
-                              color: TColor.lightGray,
-                              borderRadius: BorderRadius.circular(15)),
-                          child: Row(
-                            children: [
-                              Container(
-                                  alignment: Alignment.center,
-                                  width: 50,
-                                  height: 50,
-                                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                                  
-                                  child: Image.asset(
-                                    "assets/img/gender.png",
-                                    width: 20,
-                                    height: 20,
-                                    fit: BoxFit.contain,
-                                    color: TColor.gray,
-                                  )),
-                            
-                              Expanded(
-                                child: DropdownButtonHideUnderline(
-                                  child: DropdownButton(
-                                    items: ["Male", "Female"]
-                                        .map((name) => DropdownMenuItem(
-                                              value: name,
-                                              child: Text(
-                                                name,
-                                                style: TextStyle(
-                                                    color: TColor.gray,
-                                                    fontSize: 14),
-                                              ),
-                                            ))
-                                        .toList(),
-                                    onChanged: (value) {},
-                                    isExpanded: true,
-                                    hint: Text(
-                                      "Choose Gender",
-                                      style: TextStyle(
-                                          color: TColor.gray, fontSize: 12),
-                                    ),
-                                  ),
-                                ),
-                              ),
+                      // ... (remaining code)
 
-                             const SizedBox(width: 8,)
-
-                            ],
-                          ),),
-                      SizedBox(
-                        height: media.width * 0.04,
-                      ),
                       RoundTextField(
-                        controller: txtDate,
-                        hitText: "Date of Birth",
-                        icon: "assets/img/date.png",
+                        controller: txtWeight,
+                        hitText: "Your Weight",
+                        icon: "assets/img/weight.png",
                       ),
                       SizedBox(
                         height: media.width * 0.04,
@@ -116,40 +69,7 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                         children: [
                           Expanded(
                             child: RoundTextField(
-                              controller: txtDate,
-                              hitText: "Your Weight",
-                              icon: "assets/img/weight.png",
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 8,
-                          ),
-                          Container(
-                            width: 50,
-                            height: 50,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: TColor.secondaryG,
-                              ),
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            child: Text(
-                              "KG",
-                              style:
-                                  TextStyle(color: TColor.white, fontSize: 12),
-                            ),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: media.width * 0.04,
-                      ),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: RoundTextField(
-                              controller: txtDate,
+                              controller: txtHeight,
                               hitText: "Your Height",
                               icon: "assets/img/hight.png",
                             ),
@@ -179,14 +99,16 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                         height: media.width * 0.07,
                       ),
                       RoundButton(
-                          title: "Next >",
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const WhatYourGoalView()));
-                          }),
+                        title: "Next >",
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const WhatYourGoalView(),
+                            ),
+                          );
+                        },
+                      ),
                     ],
                   ),
                 ),

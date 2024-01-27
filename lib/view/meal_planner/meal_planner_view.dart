@@ -287,7 +287,7 @@ class _MealPlannerViewState extends State<MealPlannerView> {
                           child: RoundButton(
                             title: "Check",
                             type: RoundButtonType.bgGradient,
-                            fontSize: 12,
+                            fontSize: 10,
                             fontWeight: FontWeight.w400,
                             onPressed: () {
                                Navigator.push(
